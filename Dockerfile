@@ -4,7 +4,7 @@ FROM debian:stable-slim
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/root"
 ENV XDG_DATA_HOME="/root/.config"
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 ENV LC_ALL="en_US.UTF-8"
 ENV LC_CTYPE="en_US.UTF-8"
 ENV TERM="xterm-256color"
@@ -271,7 +271,7 @@ WORKDIR "${HOME}""/workbench"
 
 # Mobile and RE additionals
 RUN mkdir /opt/jadx
-RUN wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O /opt/jadx && unzip /opt/jadx/jadx-1.5.0.zip -d /opt/jadx
+RUN wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O /opt/jadx/jadx.zip && unzip /opt/jadx/jadx.zip -d /opt/jadx
 RUN ln -s /opt/jadx/bin/jadx /usr/bin
 
 # Some web tools
